@@ -136,8 +136,3 @@ class LinkedQueue(LADT):
             raise IndexError('peek from empty queue')
 
         return self._first.data
-
-        
-
-
-    
