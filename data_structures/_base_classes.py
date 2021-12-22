@@ -41,13 +41,20 @@ class LADT(ABC):
     Strucutres.
     """
 
-    def __init__(self, first, last, ds_type):
-        self._first = first
-        self._last = last
-        self._type = ds_type
+    def __contains__(self, element):
+        return element in self.tolist()
+
+    def __eq__(self, other):
+        if type(self) != type(other):
+            return False
+        
+        return self.tolist() == other.tolist()
 
     def __len__(self):
         return self._size
+
+    def __str__(self):
+        return str(self.tolist())
 
     def empty(self):
         """
@@ -66,3 +73,12 @@ class LADT(ABC):
         """
         Returns the collection in the form of a Python list.
         """
+        l = []
+        
+        current_node = self._first
+
+        while current_node:
+            l.append(current_node.data)
+            current_node = current_node.right
+        
+        return l

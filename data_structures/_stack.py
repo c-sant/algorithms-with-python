@@ -81,7 +81,8 @@ class LinkedStack(LADT):
     """
     A linear collection of elements that follows the LIFO (Last In, First Out)
     order of operations. The linked stack doesn't rely on arrays, but rather on
-    nodes. 
+    nodes. The first element is at the top of the stack, while the last is
+    considered to be in the bottom.
 
     It may have a capacity which cannot be surpassed, but setting it to
     ``None`` will make the stack limitless.
@@ -93,8 +94,7 @@ class LinkedStack(LADT):
     def __init__(self, capacity: int = None):
         self._capacity = capacity
         self._size = 0
-        self._top = self._bottom = None
-        super().__init__(self._top, self._bottom)
+        self._first = self._last = None
 
     @property
     def capacity(self):
@@ -103,13 +103,12 @@ class LinkedStack(LADT):
         """
         return self._capacity
 
-
     @property
     def top(self):
         """
         Element that currently is at the top of the stack.
         """
-        return self._top
+        return self._first.data
 
     def full(self):
         """
@@ -133,12 +132,12 @@ class LinkedStack(LADT):
         new_top = Node(element)
 
         if self.empty():
-            self._top = self._bottom = new_top
+            self._first = self._last = new_top
         
         else:
-            self._top.left = new_top
-            new_top.right = self._top
-            self._top = new_top
+            self._first.left = new_top
+            new_top.right = self._first
+            self._first = new_top
 
         self._size += 1
 
@@ -150,14 +149,19 @@ class LinkedStack(LADT):
         """
         if self.empty():
             raise IndexError('pop from empty stack')
-        elif len(self) == 1:
-            self._top = self._bottom = None
-        else:
-            new_top = self._top.right
-            new_top.left = self._top.right = None
+        
+        data = self._first.data
 
+        if len(self) == 1:
+            self._first = self._last = None
+        else:
+            new_top = self._first.right
+            new_top.left = self._first.right = None
+            self._first = new_top
 
         self._size -= 1
+
+        return data
 
     def peek(self):
         """
@@ -166,7 +170,7 @@ class LinkedStack(LADT):
         Raises IndexError if stack is empty.
         """
         if self.empty():
-            raise IndexError
+            raise IndexError('peek from empty stack')
 
-        return self._top
+        return self._first.data
         
