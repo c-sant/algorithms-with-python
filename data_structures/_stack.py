@@ -87,8 +87,8 @@ class LinkedStack(LADT):
     It may have a capacity which cannot be surpassed, but setting it to
     ``None`` will make the stack limitless.
 
-    Regarding the nodes, given a node x, it's left node is above x, while the
-    right node is below.
+    Regarding the node logic, given a node x, it's left node is above x, while
+    the right node is below.
     """
 
     def __init__(self, capacity: int = None):
