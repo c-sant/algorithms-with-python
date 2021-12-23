@@ -28,3 +28,7 @@ def get_sum(
     G.P.
     """
     return (first_term * abs(ratio ** terms - 1)) / abs(ratio - 1)
+
+if __name__ == '__main__':
+    print(get_term(5, 1, 2)) # 16
+    print(get_sum(5, 1, 2)) # 31
