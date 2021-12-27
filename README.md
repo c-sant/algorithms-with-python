@@ -6,6 +6,8 @@
 
 - Ciphers
   - Caesar Cipher
+  - Morse Code
+  - Pig Latin
 - Data Strucutres
   - Queue
   - Stack
@@ -16,6 +18,8 @@
   - Geometric Progression
 - Search Algorithms
   - Binary Search
+  - Count elements in array
+  - Get kth Largest/Smallest in array
   - Linear Search
 - Sorting Algorithms
   - Bubble Sort
