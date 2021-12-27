@@ -8,6 +8,9 @@
   - Caesar Cipher
   - Morse Code
   - Pig Latin
+- Conversion
+  - Roman numerals
+  - Temperature scales
 - Data Strucutres
   - Queue
   - Stack
