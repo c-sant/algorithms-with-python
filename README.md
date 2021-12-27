@@ -9,6 +9,11 @@
 - Data Strucutres
   - Queue
   - Stack
+- Math
+  - Arithmetic Progression
+  - Factorial (Iterative and Recursive)
+  - Fibonacci
+  - Geometric Progression
 - Search Algorithms
   - Binary Search
   - Linear Search
