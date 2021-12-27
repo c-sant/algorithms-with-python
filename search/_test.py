@@ -3,7 +3,7 @@ from typing import Callable, Tuple
 
 def test_search(
     algorithm: Callable,
-    sample_range: Tuple = (0, 250),
+    sample_range: Tuple[int, int] = (0, 250),
     sample_size: int = 10) -> bool:
     """
     Executes a search algorithm in a random sample to test if it is working
@@ -24,4 +24,21 @@ def test_search(
 
     except:
         return False
-    
+
+def test_get_value(
+    algorithm: Callable,
+    sample_range: Tuple[int, int] = (0, 250),
+    sample_size: int = 10) -> bool:
+    try:
+        array = random.sample(range(*sample_range), sample_size)
+        test_array = []
+
+        for i in range(1, len(array) + 1):
+            test_array.append(algorithm(array, i))
+
+        return (
+            test_array == sorted(array) or 
+            list(reversed(test_array)) == sorted(array)
+        )
+    except:
+        return False
