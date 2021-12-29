@@ -34,6 +34,9 @@ class ADT(ABC):
         Removes all items from the collection.
         """
         self._array.clear()
+    
+    def tolist(self):
+        return self._array.copy()
 
 class LADT(ABC):
     """
@@ -49,6 +52,20 @@ class LADT(ABC):
             return False
         
         return self.tolist() == other.tolist()
+
+    def __iter__(self):
+        current_node = self._first
+
+        while current_node:
+            yield current_node.data
+            
+            current_node = current_node.right
+
+    def __getitem__(self, index):
+        if index >= len(self):
+            raise IndexError('index out of range')
+        
+        return list(self)[index]
 
     def __len__(self):
         return self._size
@@ -73,12 +90,4 @@ class LADT(ABC):
         """
         Returns the collection in the form of a Python list.
         """
-        l = []
-        
-        current_node = self._first
-
-        while current_node:
-            l.append(current_node.data)
-            current_node = current_node.right
-        
-        return l
+        return list(self)
