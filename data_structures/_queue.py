@@ -1,5 +1,6 @@
 from ._base_classes import ADT, LADT
 from ._node import Node
+from typing import Any, Iterable
 
 class Queue(ADT):
     """
@@ -7,8 +8,8 @@ class Queue(ADT):
     order of operations.
     """
 
-    def __init__(self):
-        self._q = []
+    def __init__(self, iterable: Iterable = []):
+        self._q = iterable
         super().__init__(self._q)
 
     @property
@@ -31,13 +32,13 @@ class Queue(ADT):
         
         return self._q[-1]
 
-    def enqueue(self, element):
+    def enqueue(self, element: Any) -> None:
         """
         Adds element to the rear of the queue.
         """
         self._q.append(element)
 
-    def dequeue(self):
+    def dequeue(self) -> Any:
         """
         Removes and returns the element at the front of the queue.
 
@@ -48,7 +49,7 @@ class Queue(ADT):
 
         return self._q.pop(0)
 
-    def peek(self):
+    def peek(self) -> Any:
         """
         Returns the element at the front of the queue.
 
@@ -58,6 +59,8 @@ class Queue(ADT):
             raise IndexError('peek from empty queue')
         
         return self._q[0]
+
+
 
 class LinkedQueue(LADT):
     """
@@ -70,25 +73,28 @@ class LinkedQueue(LADT):
     queue, while the right node is after it.
     """
 
-    def __init__(self):
+    def __init__(self, iterable: Iterable = []):
         self._size = 0
         self._first = self._last = None
 
+        for element in iterable:
+            self.enqueue(element)
+
     @property
-    def front(self):
+    def front(self) -> Any:
         """
         Element that currently is at the front of the queue.
         """
         return self._first.data
 
     @property
-    def rear(self):
+    def rear(self)-> Any:
         """
         Element that currently is at the rear of the queue.
         """
         return self._last.data
 
-    def enqueue(self, element):
+    def enqueue(self, element: Any) -> None:
         """
         Adds element to the rear of the queue.
         """
@@ -104,7 +110,7 @@ class LinkedQueue(LADT):
 
         self._size += 1
 
-    def dequeue(self):
+    def dequeue(self) -> Any:
         """
         Removes and returns the element at the front of the queue.
 
@@ -126,7 +132,7 @@ class LinkedQueue(LADT):
 
         return data
 
-    def peek(self):
+    def peek(self) -> Any:
         """
         Returns the element at the front of the queue.
 

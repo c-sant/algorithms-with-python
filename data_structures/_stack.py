@@ -1,3 +1,4 @@
+from typing import Iterable
 from ._base_classes import ADT, LADT
 from ._node import Node
 
@@ -10,9 +11,12 @@ class Stack(ADT):
     ``None`` will make the stack limitless.
     """
 
-    def __init__(self, capacity: int = None):
+    def __init__(self, iterable: Iterable = [], capacity: int = None):
+        if capacity < len(iterable):
+            raise ValueError('push into full stack')
+        
         self._capacity = capacity
-        self._s = []
+        self._s = list(reversed(iterable))
         super().__init__(self._s)
 
     @property
@@ -91,10 +95,13 @@ class LinkedStack(LADT):
     the right node is below.
     """
 
-    def __init__(self, capacity: int = None):
+    def __init__(self, iterable: Iterable = [], capacity: int = None):
         self._capacity = capacity
         self._size = 0
         self._first = self._last = None
+
+        for element in iterable:
+            self.push(element)
 
     @property
     def capacity(self):
