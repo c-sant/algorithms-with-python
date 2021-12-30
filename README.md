@@ -12,6 +12,7 @@
   - Roman numerals
   - Temperature scales
 - Data Strucutres
+  - Linked List
   - Queue
   - Stack
 - Math
