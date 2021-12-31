@@ -1,6 +1,8 @@
+from typing import Union
+
 def selection_sort(
     array: list,
-    inplace: bool = False):
+    inplace: bool = False) -> Union[list, None]:
     """
     A comparison sorting algorithm which sorts a given array by moving it's
     smallest values to the beggining one at a time.

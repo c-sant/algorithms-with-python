@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Any, Iterable, Union
 from ._base_classes import ADT, LADT
 from ._node import Node
 
@@ -95,7 +95,7 @@ class LinkedStack(LADT):
     the right node is below.
     """
 
-    def __init__(self, iterable: Iterable = [], capacity: int = None):
+    def __init__(self, iterable: Iterable = [], capacity: int = None) -> None:
         self._capacity = capacity
         self._size = 0
         self._first = self._last = None
@@ -104,20 +104,20 @@ class LinkedStack(LADT):
             self.push(element)
 
     @property
-    def capacity(self):
+    def capacity(self) -> Union[int, None]:
         """
         Maximum amount of elements the stack can have.
         """
         return self._capacity
 
     @property
-    def top(self):
+    def top(self) -> Any:
         """
         Element that currently is at the top of the stack.
         """
         return self._first.data
 
-    def full(self):
+    def full(self) -> bool:
         """
         Returns True if number of elements in the stack are the same value as
         it's capacity; otherwise, returns False.
@@ -127,7 +127,7 @@ class LinkedStack(LADT):
         
         return self._capacity == len(self)
 
-    def push(self, element):
+    def push(self, element: Any) -> None:
         """
         Inserts element at the top of the stack.
 
@@ -148,7 +148,7 @@ class LinkedStack(LADT):
 
         self._size += 1
 
-    def pop(self):
+    def pop(self) -> Any:
         """
         Removes and returns the element at the top of the stack.
 
@@ -170,7 +170,7 @@ class LinkedStack(LADT):
 
         return data
 
-    def peek(self):
+    def peek(self) -> Any:
         """
         Returns the element at the top of the stack.
 

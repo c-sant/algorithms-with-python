@@ -1,8 +1,10 @@
+from typing import Union
+
 def _merge(
     array: list, 
     start: int, 
     mid: int, 
-    end: int):
+    end: int) -> None:
     """
     Auxiliary function to merge and sort two arrays.
     """
@@ -33,7 +35,7 @@ def merge_sort(
     array: list,
     start: int = 0,
     end: int = None,
-    inplace: bool = False):
+    inplace: bool = False) -> Union[list, None]:
     """
     A "divide and conquer" sorting algorithm that divides the input array into
     two and applies itself in each of them to sort them before merging them 

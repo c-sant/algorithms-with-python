@@ -1,8 +1,6 @@
 from string import ascii_lowercase, ascii_uppercase
 
-def caesar_cipher(
-    text: str,
-    key: int) -> str:
+def caesar_cipher(text: str, key: int) -> str:
     """
     One of the simplest encryption techniques, the Caesar cipher was created by
     Julius Caesar to encrypt messages of high military importance.

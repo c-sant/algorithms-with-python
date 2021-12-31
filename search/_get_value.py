@@ -1,4 +1,6 @@
-def get_kth_smallest(array: list, k: int = 1):
+from typing import Any
+
+def get_kth_smallest(array: list, k: int = 1) -> Any:
     """
     Returns the kth smallest number in array.
     """
@@ -11,7 +13,7 @@ def get_kth_smallest(array: list, k: int = 1):
     return array[k - 1]
 
 
-def get_kth_largest(array: list, k: int = 1):
+def get_kth_largest(array: list, k: int = 1) -> Any:
     """
     Returns the kth largest number in given array.
     """

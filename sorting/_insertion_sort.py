@@ -1,6 +1,6 @@
 def insertion_sort(
     array: list, 
-    inplace: bool = False):
+    inplace: bool = False) -> list:
     """
     A sorting algorithm that organizes values in an array one at a time. It 
     loops through the inserted array until it finds a value in a wrong 

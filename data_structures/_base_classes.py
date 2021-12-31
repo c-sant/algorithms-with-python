@@ -1,26 +1,28 @@
 from abc import ABC
+from typing import Any
+from ._node import Node
 
 class ADT(ABC):
     """
     Abstract Data Class used as base class for array-based Data Strucutres.
     """
 
-    def __init__(self, array: list):
+    def __init__(self, array: list) -> None:
         self._array = array
 
-    def __contains__(self, element):
+    def __contains__(self, element: Any) -> bool:
         return element in self._array
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
         if type(self) != type(other):
             return False
 
         return self._array == other._array
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self._array)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self._array)
 
     def empty(self) -> bool:
@@ -29,13 +31,13 @@ class ADT(ABC):
         """
         return len(self) == 0
 
-    def clear(self):
+    def clear(self) -> None:
         """
         Removes all items from the collection.
         """
         self._array.clear()
     
-    def tolist(self):
+    def tolist(self) -> list:
         return self._array.copy()
 
 class LADT(ABC):
@@ -44,10 +46,10 @@ class LADT(ABC):
     Strucutres.
     """
 
-    def __contains__(self, element):
+    def __contains__(self, element: Any) -> bool:
         return element in self.tolist()
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
         if type(self) != type(other):
             return False
         
@@ -61,7 +63,7 @@ class LADT(ABC):
             
             current_node = current_node.right
 
-    def _traverse(self, index):
+    def _traverse(self, index: int) -> Node:
         if index < 0:
             index = len(self) - index
             
@@ -83,32 +85,32 @@ class LADT(ABC):
             
             return current_node
 
-    def __getitem__(self, index):
+    def __getitem__(self, index: int) -> Any:
         if index >= len(self):
             raise IndexError('index out of range')
         
         return list(self)[index]
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self._size
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.tolist())
 
-    def empty(self):
+    def empty(self) -> bool:
         """
         Returns True if the collection is empty; otherwise, returns False.
         """
         return len(self) == 0
 
-    def clear(self):
+    def clear(self) -> None:
         """
         Removes all items from the collection.
         """
         self._first = self._bottom = None
         self._size = 0
 
-    def tolist(self):
+    def tolist(self) -> list:
         """
         Returns the collection in the form of a Python list.
         """

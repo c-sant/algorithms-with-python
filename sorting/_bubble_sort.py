@@ -1,6 +1,6 @@
 def bubble_sort(
     array: list, 
-    inplace: bool = False):
+    inplace: bool = False) -> list:
     """
     A sorting algorithm that loops through an unsorted array, comparing each 
     element with it's adjacent and swaping them if they are in the wrong order.

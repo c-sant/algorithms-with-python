@@ -33,7 +33,7 @@ def get_sequence(n: int) -> list:
 
     return l
 
-def is_fibonacci(n: int):
+def is_fibonacci(n: int) -> bool:
     """
     Returns True if value is in Fibonacci sequence; otherwise, returns False.
     """

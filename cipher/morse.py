@@ -11,7 +11,7 @@ MORSE_ALPHABET = {
     '7': '--...', '8': '---..', '9': '----.', ' ': ''
 }
 
-def to_morse(char: str, alphabet: dict = MORSE_ALPHABET):
+def to_morse(char: str, alphabet: dict = MORSE_ALPHABET) -> str:
     """
     Translates an individual character into it's morse code equivalent.
     """
@@ -19,7 +19,7 @@ def to_morse(char: str, alphabet: dict = MORSE_ALPHABET):
 
     return alphabet[char]
 
-def from_morse(char: str, alphabet: dict = None):
+def from_morse(char: str, alphabet: dict = None) -> str:
     """
     Translates an individual morse code character into it's Latin alphabet
     equivalent.
@@ -31,7 +31,7 @@ def from_morse(char: str, alphabet: dict = None):
 
     return alphabet[char]
 
-def text_to_morse(text: str):
+def text_to_morse(text: str) -> str:
     """
     Converts text into morse code.
     """
@@ -43,7 +43,7 @@ def text_to_morse(text: str):
 
     return ' '.join(text)
 
-def text_from_morse(text: str):
+def text_from_morse(text: str) -> str:
     """
     Translates text from morse code.
     """

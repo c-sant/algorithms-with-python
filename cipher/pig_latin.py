@@ -1,4 +1,4 @@
-def piglatinize(text: str):
+def piglatinize(text: str) -> str:
     """
     A language game, Pig Latin alters the words of a text by moving the first
     consonant of each word into the end and adding the suffix -ay to the word.
@@ -26,7 +26,7 @@ def piglatinize(text: str):
 
     return ' '.join(text)
 
-def depiglatinize(text: str):
+def depiglatinize(text: str) -> str:
     """
     The reverse process to return a piglatinized text back to normal.
     """

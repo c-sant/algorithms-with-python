@@ -14,7 +14,7 @@ class LinkedList(LADT):
         self._size = 0
         self._first = self._last = None
 
-    def __setitem__(self, index, element):
+    def __setitem__(self, index: int, element: Any) -> None:
         if index >= len(self):
             raise IndexError('list assignment index out of range')
         

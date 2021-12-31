@@ -8,12 +8,12 @@ class Queue(ADT):
     order of operations.
     """
 
-    def __init__(self, iterable: Iterable = []):
+    def __init__(self, iterable: Iterable = []) -> None:
         self._q = iterable
         super().__init__(self._q)
 
     @property
-    def front(self):
+    def front(self) -> Any:
         """
         Element that currently is at the front of the queue.
         """
@@ -23,7 +23,7 @@ class Queue(ADT):
         return self._q[0]
 
     @property
-    def rear(self):
+    def rear(self) -> Any:
         """
         Element that currently is at the rear of the queue.
         """
@@ -73,7 +73,7 @@ class LinkedQueue(LADT):
     queue, while the right node is after it.
     """
 
-    def __init__(self, iterable: Iterable = []):
+    def __init__(self, iterable: Iterable = []) -> None:
         self._size = 0
         self._first = self._last = None
 

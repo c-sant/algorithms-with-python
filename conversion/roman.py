@@ -14,7 +14,7 @@ ROMAN_NUMERALS = {
     'M': 1000
 }
 
-def roman_to_int(roman_num: str):
+def roman_to_int(roman_num: str) -> int:
     """
     Converts Roman numerals to integers.
     """
@@ -34,7 +34,7 @@ def roman_to_int(roman_num: str):
         total += ROMAN_NUMERALS[current_num]
     return total
 
-def int_to_roman(value: int):
+def int_to_roman(value: int) -> str:
     """
     Converts integers to Roman numerals.
     """

@@ -1,4 +1,6 @@
-def _partition(array, start, end):
+from typing import Union
+
+def _partition(array: list, start: int, end: int) -> int:
     """
     Auxiliary function to get pivot index.
     """
@@ -19,7 +21,7 @@ def quick_sort(
     array: list,
     start: int = 0,
     end: int = None,
-    inplace: bool = False):
+    inplace: bool = False) -> Union[list, None]:
     """
     A "divide and conquer" algorithm based on picking an element as pivot and 
     dividing a given array based on it.

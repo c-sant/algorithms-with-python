@@ -3,7 +3,7 @@ from typing import Union, Callable
 def wave_sort(
     array: list,
     inplace: bool = False,
-    algorithm: Union[str, Callable]= 'default'):
+    algorithm: Union[str, Callable] = 'default') -> Union[list, None]:
     """
     Returns array sorted in a wave form.
 

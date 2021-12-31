@@ -1,4 +1,6 @@
-def count_element(array: list, element):
+from typing import Any
+
+def count_element(array: list, element: Any) -> int:
     """
     Returns the amount of times a certain element occurs in a given array.
     """
