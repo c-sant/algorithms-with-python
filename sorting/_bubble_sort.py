@@ -1,6 +1,8 @@
+from typing import Union
+
 def bubble_sort(
     array: list, 
-    inplace: bool = False) -> list:
+    inplace: bool = False) -> Union[list, None]:
     """
     A sorting algorithm that loops through an unsorted array, comparing each 
     element with it's adjacent and swaping them if they are in the wrong order.
