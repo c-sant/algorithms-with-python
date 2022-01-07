@@ -2,6 +2,7 @@ from abc import ABC
 from typing import Any
 from ._node import Node
 
+
 class ADT(ABC):
     """
     Abstract Data Class used as base class for array-based Data Strucutres.
@@ -36,9 +37,10 @@ class ADT(ABC):
         Removes all items from the collection.
         """
         self._array.clear()
-    
+
     def tolist(self) -> list:
         return self._array.copy()
+
 
 class LADT(ABC):
     """
@@ -52,7 +54,7 @@ class LADT(ABC):
     def __eq__(self, other) -> bool:
         if type(self) != type(other):
             return False
-        
+
         return self.tolist() == other.tolist()
 
     def __iter__(self):
@@ -60,35 +62,35 @@ class LADT(ABC):
 
         while current_node:
             yield current_node.data
-            
+
             current_node = current_node.right
 
     def _traverse(self, index: int) -> Node:
         if index < 0:
             index = len(self) - index
-            
+
         if index >= len(self):
             raise IndexError('index out of range')
-        
+
         if index < len(self) // 2:
             current_node = self._first
 
             for i in range(index):
                 current_node = current_node.right
-            
+
             return current_node
         else:
             current_node = self._last
 
             for i in range(len(self) - index - 1):
                 current_node = current_node.left
-            
+
             return current_node
 
     def __getitem__(self, index: int) -> Any:
         if index >= len(self):
             raise IndexError('index out of range')
-        
+
         return list(self)[index]
 
     def __len__(self) -> int:

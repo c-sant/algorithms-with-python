@@ -1,6 +1,6 @@
 def linear_search(
-    array: list,
-    item: int) -> int:
+        array: list,
+        item: int) -> int:
     """
     A search algorithm that loops through a given array comparing each element
     to a given searched value. When the element and the value are the same, the
@@ -12,8 +12,9 @@ def linear_search(
     for index, value in enumerate(array):
         if item == value:
             return index
-        
+
     return -1
+
 
 if __name__ == "__main__":
     from _test import test_search

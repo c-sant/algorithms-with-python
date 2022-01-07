@@ -2,6 +2,7 @@ from typing import Any, Iterable, Union
 from ._base_classes import ADT, LADT
 from ._node import Node
 
+
 class Stack(ADT):
     """
     A linear collection of elements that follows the LIFO (Last In, First Out)
@@ -14,7 +15,7 @@ class Stack(ADT):
     def __init__(self, iterable: Iterable = [], capacity: int = None):
         if capacity < len(iterable):
             raise ValueError('push into full stack')
-        
+
         self._capacity = capacity
         self._s = list(reversed(iterable))
         super().__init__(self._s)
@@ -54,7 +55,7 @@ class Stack(ADT):
         """
         if self.full():
             raise IndexError('push into full stack')
-        
+
         self._s.insert(0, element)
 
     def pop(self):
@@ -76,9 +77,8 @@ class Stack(ADT):
         """
         if self.empty():
             raise IndexError('peek from empty stack')
-        
-        return self._s[0]
 
+        return self._s[0]
 
 
 class LinkedStack(LADT):
@@ -124,7 +124,7 @@ class LinkedStack(LADT):
         """
         if self._capacity == None:
             return False
-        
+
         return self._capacity == len(self)
 
     def push(self, element: Any) -> None:
@@ -135,12 +135,12 @@ class LinkedStack(LADT):
         """
         if self.full():
             raise IndexError('push into full stack')
-        
+
         new_top = Node(element)
 
         if self.empty():
             self._first = self._last = new_top
-        
+
         else:
             self._first.left = new_top
             new_top.right = self._first
@@ -156,7 +156,7 @@ class LinkedStack(LADT):
         """
         if self.empty():
             raise IndexError('pop from empty stack')
-        
+
         data = self._first.data
 
         if len(self) == 1:
@@ -180,4 +180,3 @@ class LinkedStack(LADT):
             raise IndexError('peek from empty stack')
 
         return self._first.data
-        

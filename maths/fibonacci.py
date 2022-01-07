@@ -3,13 +3,14 @@ def fibonacci(n: int) -> int:
     Returns a number in the specified position in the Fibonacci sequence.
     """
     if not (type(n) == int):
-        raise TypeError("'n' should be an int") 
+        raise TypeError("'n' should be an int")
     elif n < 0:
         raise ValueError("'n' should be positive")
     elif n <= 1:
         return n
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 def get_sequence(n: int) -> list:
     """
@@ -33,6 +34,7 @@ def get_sequence(n: int) -> list:
 
     return l
 
+
 def is_fibonacci(n: int) -> bool:
     """
     Returns True if value is in Fibonacci sequence; otherwise, returns False.
@@ -44,12 +46,13 @@ def is_fibonacci(n: int) -> bool:
     while fib <= n:
         if fib == n:
             return True
-        
+
         i += 1
 
         fib = fibonacci(i)
-    
+
     return False
+
 
 if __name__ == '__main__':
     s = get_sequence(15)
@@ -59,5 +62,5 @@ if __name__ == '__main__':
     print(s == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610])
     # True
 
-    print(is_fibonacci(610)) # True
-    print(is_fibonacci(611)) # False
+    print(is_fibonacci(610))  # True
+    print(is_fibonacci(611))  # False

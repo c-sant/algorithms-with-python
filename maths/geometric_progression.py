@@ -1,7 +1,7 @@
 def get_term(
-    position: int,
-    first_term: float,
-    ratio: float) -> float:
+        position: int,
+        first_term: float,
+        ratio: float) -> float:
     """
     Returns the term at specified position in a given G.P.
 
@@ -15,13 +15,14 @@ def get_term(
     """
     return first_term * ratio ** (position - 1)
 
+
 def get_sum(
-    terms: int,
-    first_term: float,
-    ratio: float) -> float:
+        terms: int,
+        first_term: float,
+        ratio: float) -> float:
     """
     Returns the sum of all of the values in a given G.P.
-    
+
     :param int terms: the total number of terms the G.P has.
     :param float first_term: the first term of the G.P.
     :param float ratio: the common ratio between the elements of the
@@ -29,6 +30,7 @@ def get_sum(
     """
     return (first_term * abs(ratio ** terms - 1)) / abs(ratio - 1)
 
+
 if __name__ == '__main__':
-    print(get_term(5, 1, 2)) # 16
-    print(get_sum(5, 1, 2)) # 31
+    print(get_term(5, 1, 2))  # 16
+    print(get_sum(5, 1, 2))  # 31

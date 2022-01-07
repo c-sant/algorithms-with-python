@@ -14,6 +14,7 @@ ROMAN_NUMERALS = {
     'M': 1000
 }
 
+
 def roman_to_int(roman_num: str) -> int:
     """
     Converts Roman numerals to integers.
@@ -25,14 +26,15 @@ def roman_to_int(roman_num: str) -> int:
     i = 0
     while i < len(roman_num):
         if roman_num[i:i + 2] in ('IV', 'IX', 'XL', 'XC', 'CD', 'CM'):
-            current_num = roman_num[i:i + 2]   
+            current_num = roman_num[i:i + 2]
             i += 2
         else:
             current_num = roman_num[i]
             i += 1
-        
+
         total += ROMAN_NUMERALS[current_num]
     return total
+
 
 def int_to_roman(value: int) -> str:
     """
@@ -42,15 +44,16 @@ def int_to_roman(value: int) -> str:
     roman_num = ""
 
     for i in sorted(numerals.keys(), reverse=True):
-        n = value // i # amount of times inserted number can be divided by i
+        n = value // i  # amount of times inserted number can be divided by i
         value -= i * n
         roman_num += numerals[i] * n
 
     return roman_num
+
 
 if __name__ == '__main__':
     l = [int_to_roman(i) for i in range(1000)]
 
     l = [roman_to_int(i) for i in l]
 
-    print(l == list(range(1000))) # True
+    print(l == list(range(1000)))  # True

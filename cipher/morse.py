@@ -11,6 +11,7 @@ MORSE_ALPHABET = {
     '7': '--...', '8': '---..', '9': '----.', ' ': ''
 }
 
+
 def to_morse(char: str, alphabet: dict = MORSE_ALPHABET) -> str:
     """
     Translates an individual character into it's morse code equivalent.
@@ -19,6 +20,7 @@ def to_morse(char: str, alphabet: dict = MORSE_ALPHABET) -> str:
 
     return alphabet[char]
 
+
 def from_morse(char: str, alphabet: dict = None) -> str:
     """
     Translates an individual morse code character into it's Latin alphabet
@@ -26,10 +28,11 @@ def from_morse(char: str, alphabet: dict = None) -> str:
     """
     if alphabet == None:
         alphabet = dict(zip(MORSE_ALPHABET.values(), MORSE_ALPHABET.keys()))
-    
+
     char = str(char)
 
     return alphabet[char]
+
 
 def text_to_morse(text: str) -> str:
     """
@@ -43,6 +46,7 @@ def text_to_morse(text: str) -> str:
 
     return ' '.join(text)
 
+
 def text_from_morse(text: str) -> str:
     """
     Translates text from morse code.
@@ -50,19 +54,20 @@ def text_from_morse(text: str) -> str:
     alphabet = dict(zip(MORSE_ALPHABET.values(), MORSE_ALPHABET.keys()))
 
     text = text.split(' ')
-    
+
     for i in range(len(text)):
         text[i] = from_morse(text[i], alphabet)
 
     return ''.join(text)
 
+
 if __name__ == '__main__':
     text = 'Dummy text'
-    
+
     text = text_to_morse(text)
 
     print(text)
 
     text = text_from_morse(text)
 
-    print(text) # DUMMY TEXT (original text in uppercase)
+    print(text)  # DUMMY TEXT (original text in uppercase)

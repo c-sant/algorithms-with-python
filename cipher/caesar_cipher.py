@@ -1,5 +1,6 @@
 from string import ascii_lowercase, ascii_uppercase
 
+
 def caesar_cipher(text: str, key: int) -> str:
     """
     One of the simplest encryption techniques, the Caesar cipher was created by
@@ -18,7 +19,7 @@ def caesar_cipher(text: str, key: int) -> str:
         if c in ascii_lowercase:
             index = (ascii_lowercase.index(c) + key) % 26
             new_text.append(ascii_lowercase[index])
-        
+
         elif c in ascii_uppercase:
             index = (ascii_uppercase.index(c) + key) % 26
             new_text.append(ascii_uppercase[index])

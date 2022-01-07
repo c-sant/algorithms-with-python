@@ -2,6 +2,7 @@ from ._base_classes import ADT, LADT
 from ._node import Node
 from typing import Any, Iterable
 
+
 class Queue(ADT):
     """
     A linear collection of elements that follows the FIFO (First In, First Out)
@@ -19,7 +20,7 @@ class Queue(ADT):
         """
         if self.empty():
             return None
-        
+
         return self._q[0]
 
     @property
@@ -29,7 +30,7 @@ class Queue(ADT):
         """
         if self.empty():
             return None
-        
+
         return self._q[-1]
 
     def enqueue(self, element: Any) -> None:
@@ -57,9 +58,8 @@ class Queue(ADT):
         """
         if self.empty():
             raise IndexError('peek from empty queue')
-        
-        return self._q[0]
 
+        return self._q[0]
 
 
 class LinkedQueue(LADT):
@@ -88,7 +88,7 @@ class LinkedQueue(LADT):
         return self._first.data
 
     @property
-    def rear(self)-> Any:
+    def rear(self) -> Any:
         """
         Element that currently is at the rear of the queue.
         """

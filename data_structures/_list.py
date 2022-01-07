@@ -2,6 +2,7 @@ from typing import Any
 from ._node import Node
 from ._base_classes import LADT
 
+
 class LinkedList(LADT):
     """
     A double-ended list of elements that uses node logic to store it's items.
@@ -17,12 +18,12 @@ class LinkedList(LADT):
     def __setitem__(self, index: int, element: Any) -> None:
         if index >= len(self):
             raise IndexError('list assignment index out of range')
-        
+
         current_node = self._first
 
         for i in range(index):
             current_node = current_node.right
-        
+
         current_node.data = element
 
     def append(self, element: Any) -> None:
@@ -30,7 +31,7 @@ class LinkedList(LADT):
         Appends element to the end of the list.
         """
         new_last = Node(element)
-        
+
         if self.empty():
             self._first = self._last = new_last
         else:
@@ -58,7 +59,7 @@ class LinkedList(LADT):
                 new_node.left = node_before
             else:
                 self._first = new_node
-        
+
         self._size += 1
 
     def pop(self, index: int = -1) -> Any:
@@ -97,7 +98,7 @@ class LinkedList(LADT):
         """
         if element not in self:
             raise ValueError(f"'{element}' is not in list")
-        
+
         for i, current_element in enumerate(self):
             if current_element == element:
                 return i
@@ -108,11 +109,11 @@ class LinkedList(LADT):
         """
         if self.empty():
             return 0
-        
+
         total = 0
 
         for i in self:
             if i == element:
                 total += 1
-        
+
         return total

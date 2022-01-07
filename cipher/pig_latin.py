@@ -26,6 +26,7 @@ def piglatinize(text: str) -> str:
 
     return ' '.join(text)
 
+
 def depiglatinize(text: str) -> str:
     """
     The reverse process to return a piglatinized text back to normal.
@@ -39,7 +40,7 @@ def depiglatinize(text: str) -> str:
         word = word[:-3]
         word.insert(0, first)
         text[i] = ''.join(word)
-    
+
     return ' '.join(text)
 
 
