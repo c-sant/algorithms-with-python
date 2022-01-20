@@ -18,7 +18,7 @@
 - Math
   - Arithmetic Progression
   - Factorial (Iterative and Recursive)
-  - Fibonacci
+  - Fibonacci (Iterative and Recursive)
   - Geometric Progression
 - Search Algorithms
   - Binary Search
