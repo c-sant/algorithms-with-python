@@ -1,4 +1,4 @@
-def recursive_factorial(n: int) -> int:
+def recursive(n: int) -> int:
     """
     Returns n! value using recursive method.
     """
@@ -9,10 +9,10 @@ def recursive_factorial(n: int) -> int:
     elif n <= 1:
         return 1
     else:
-        return n * recursive_factorial(n - 1)
+        return n * recursive(n - 1)
 
 
-def iterative_factorial(n: int) -> int:
+def iterative(n: int) -> int:
     """
     Returns n! value using iterative method.
     """
@@ -28,8 +28,3 @@ def iterative_factorial(n: int) -> int:
             total *= i
 
         return total
-
-
-if __name__ == "__main__":
-    print(recursive_factorial(5))  # 120
-    print(iterative_factorial(5))  # 120

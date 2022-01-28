@@ -24,9 +24,3 @@ def wave_sort(
 
     if not inplace:
         return array
-
-if __name__ == '__main__':
-    sample = [8, 1, 3, 5, 7, 4, 10, 9, 6, 2]
-    print(wave_sort(sample))
-    # sorted sample: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    # wave sample: [2, 1, 4, 3, 6, 5, 8, 7, 10, 9]

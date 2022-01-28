@@ -27,11 +27,3 @@ def bubble_sort(
             break
     if not inplace:
         return array
-
-
-if __name__ == "__main__":
-    from _test import test_sort
-
-    result = test_sort(bubble_sort)
-
-    print(result)

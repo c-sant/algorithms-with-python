@@ -23,11 +23,3 @@ def insertion_sort(
 
     if not inplace:
         return array
-
-
-if __name__ == "__main__":
-    from _test import test_sort
-
-    result = test_sort(insertion_sort)
-
-    print(result)

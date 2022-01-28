@@ -28,11 +28,3 @@ def caesar_cipher(text: str, key: int) -> str:
             new_text.append(c)
 
     return "".join(new_text)
-
-
-if __name__ == '__main__':
-    for i in range(26):
-        print(caesar_cipher(ascii_lowercase, i))
-
-    for i in range(26):
-        print(caesar_cipher(ascii_uppercase, i))

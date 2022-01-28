@@ -29,8 +29,3 @@ def get_sum(
     A.P.
     """
     return (terms / 2) * (2 * first_term + (terms - 1) * difference)
-
-
-if __name__ == '__main__':
-    print(get_term(10, 1, 1))  # 10
-    print(get_sum(10, 1, 1))  # sum of [1, 10] = 55

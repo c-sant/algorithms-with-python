@@ -49,11 +49,3 @@ def int_to_roman(value: int) -> str:
         roman_num += numerals[i] * n
 
     return roman_num
-
-
-if __name__ == '__main__':
-    l = [int_to_roman(i) for i in range(1000)]
-
-    l = [roman_to_int(i) for i in l]
-
-    print(l == list(range(1000)))  # True

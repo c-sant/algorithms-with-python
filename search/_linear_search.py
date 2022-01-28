@@ -14,11 +14,3 @@ def linear_search(
             return index
 
     return -1
-
-
-if __name__ == "__main__":
-    from _test import test_search
-
-    result = test_search(linear_search)
-
-    print(result)

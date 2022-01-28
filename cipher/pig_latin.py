@@ -42,13 +42,3 @@ def depiglatinize(text: str) -> str:
         text[i] = ''.join(word)
 
     return ' '.join(text)
-
-
-if __name__ == '__main__':
-    example = piglatinize("This is a Pig Latin phrase")
-
-    print(example)
-
-    example = depiglatinize(example)
-
-    print(example)

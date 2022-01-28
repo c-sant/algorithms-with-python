@@ -1,7 +1,4 @@
-from tkinter import E
-
-
-def recursive_fibonacci(n: int) -> int:
+def recursive(n: int) -> int:
     """
     Returns a number in the specified position in the Fibonacci sequence
     using recursion.
@@ -13,9 +10,9 @@ def recursive_fibonacci(n: int) -> int:
     elif n <= 1:
         return n
     else:
-        return recursive_fibonacci(n - 1) + recursive_fibonacci(n - 2)
+        return recursive(n - 1) + recursive(n - 2)
 
-def iterative_fibonacci(n: int) -> int:
+def iterative(n: int) -> int:
     """
     Returns a number in the specified position in the Fibonacci sequence
     using iterations.
@@ -67,7 +64,7 @@ def get_sequence(n: int, method: str = 'r') -> list:
 
     if method == 'r':
         for i in range(n + 1):
-            l.append(recursive_fibonacci(i))
+            l.append(recursive(i))
     
     elif method == 'i':
         x, y = 0, 1
@@ -97,7 +94,7 @@ def is_fibonacci(n: int, method: str = 'r') -> bool:
         raise ValueError("'method' must be either 'r' or 'i'")
 
     i = 0
-    fib = recursive_fibonacci(i)
+    fib = recursive(i)
 
     while fib <= n:
         if fib == n:
@@ -106,29 +103,8 @@ def is_fibonacci(n: int, method: str = 'r') -> bool:
         i += 1
 
         if method == 'r':
-            fib = recursive_fibonacci(i) 
+            fib = recursive(i) 
         elif method == 'i':
-            fib = iterative_fibonacci(i)
+            fib = iterative(i)
 
     return False
-
-
-if __name__ == '__main__':
-    # Recursive:
-    s = get_sequence(15, 'r')
-    print(s)
-    # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
-
-    print(s == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610])
-    # True
-
-    # Iterative:
-    s = get_sequence(15, 'i')
-    print(s)
-    # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
-
-    print(s == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610])
-    # True
-
-    print(is_fibonacci(610))  # True
-    print(is_fibonacci(611))  # False

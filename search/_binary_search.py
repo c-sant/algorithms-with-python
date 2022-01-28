@@ -60,15 +60,3 @@ def recursive_binary_search(
 
     else:
         return recursive_binary_search(array, item, mid + 1, end)
-
-
-if __name__ == "__main__":
-    from _test import test_search
-
-    result = test_search(binary_search)
-
-    print(result)
-
-    result = test_search(recursive_binary_search)
-
-    print(result)
