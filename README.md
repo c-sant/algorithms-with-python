@@ -1,8 +1,8 @@
-# Algorithms and Data Structures with Python
+# Data Structures and Algorithms with Python
 
 > An implementation of data structures and algorithms for the purpose of practice and personal improvement in Python programming.
 
-## :scroll: Implemented Algorithms
+## :scroll: Implemented so far
 
 - Ciphers
   - Caesar Cipher
@@ -18,7 +18,7 @@
 - Math
   - Arithmetic Progression
   - Factorial (Iterative and Recursive)
-  - Fibonacci
+  - Fibonacci (Iterative and Recursive)
   - Geometric Progression
 - Search Algorithms
   - Binary Search
